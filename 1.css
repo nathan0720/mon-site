@@ -53,3 +53,10 @@ main {
   text-align: center;
   margin-top: 100px;
 }
+
+
+
+img {
+  width: 10000px;
+  height: auto; /* garde les proportions */
+}
