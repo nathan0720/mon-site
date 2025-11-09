@@ -73,7 +73,7 @@ nav {
   transition: width 0.3s;
 }
 .menu a:hover::after {
-  width: 100%;                           /* Soulignement complet au survol */
+  width: 50%;                           /* Soulignement complet au survol */
 }
 .menu a.active::after {
   width: 100%;                           /* Lien actif souligné */
@@ -149,4 +149,16 @@ nav::after {
   nav:hover .menu {
     opacity: 1;
   }
+}
+
+
+
+.image-pp  {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  float: right;
+  margin-right: 10%; /* espace entre l'image et le bord droit */
+  margin-left: 20%;  /* espace entre l'image et le texte à gauche */
 }
