@@ -162,3 +162,115 @@ nav::after {
   margin-right: 10%; /* espace entre l'image et le bord droit */
   margin-left: 20%;  /* espace entre l'image et le texte à gauche */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.timeline-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 50px auto;
+  position: relative;
+}
+
+.timeline {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+}
+
+.timeline::-webkit-scrollbar {
+  display: none; /* cache la scrollbar */
+}
+
+.timeline-item {
+  min-width: 200px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.arrow {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur des rectangles */
+.rectangles-container {
+  display: flex;
+  flex-wrap: wrap;       
+  gap: 20px;             
+  justify-content: center; /* centre les rectangles sur chaque ligne */
+  margin-top: 40px;        /* espace avec le contenu au-dessus */
+}
+
+/* Style des rectangles */
+.rectangle {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  min-width: 200px;      
+  flex: 1 1 200px;       
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none; 
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* léger relief */
+}
+
+/* Effet au survol */
+.rectangle:hover {
+  transform: scale(1.05);
+  background-color: #6f6f6f; /* jaune vif pour contraste */
+  color: #000000;
+}
