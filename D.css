@@ -1,0 +1,94 @@
+/* === STYLE GÉNÉRAL DE LA PAGE === */
+body {
+  background-color: #000; /* Fond noir pour bien faire ressortir la bulle */
+  color: white; /* Couleur du texte en blanc */
+  font-family: 'Poppins', sans-serif; /* Police moderne et lisse */
+  margin: 0; /* Supprime les marges par défaut du navigateur */
+  height: 100vh; /* Prend toute la hauteur de l’écran */
+  display: flex; /* Permet de centrer verticalement le header sur la page */
+  justify-content: center; /* Centre horizontalement le header */
+  align-items: flex-start; /* Place le header vers le haut (on peut mettre center pour le centrer verticalement) */
+}
+
+/* === CONTENEUR DU HEADER === */
+.bubble-header {
+  display: flex; /* Active Flexbox pour placer la bulle */
+  justify-content: center; /* Centre horizontalement la bulle */
+  width: 100%; /* Prend toute la largeur disponible */
+  margin-top: 40px; /* Espace au-dessus de la bulle */
+}
+
+/* === LA BULLE LIQUIDE GLACE === */
+.bubble {
+  display: flex; /* Aligne le contenu avec Flexbox */
+  justify-content: center; /* ✅ Centre horizontalement le texte ou les liens */
+  align-items: center; /* ✅ Centre verticalement le contenu */
+  flex-direction: column; /* ✅ Met le nom ou les liens l’un au-dessus de l’autre (axe vertical) */
+  text-align: center; /* ✅ Centre le texte à l’intérieur */
+  gap: 10px; /* Espace entre les éléments (utile quand les liens apparaissent) */
+
+  backdrop-filter: blur(15px) saturate(180%); /* Effet verre givré : flou et saturation */
+  -webkit-backdrop-filter: blur(15px) saturate(180%); /* Compatibilité Safari */
+  background-color: rgba(255, 255, 255, 0.15); /* Fond blanc semi-transparent */
+  border-radius: 50px; /* Coins arrondis en forme de capsule */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure blanche transparente */
+  padding: 20px 60px; /* Espace intérieur de la bulle */
+  transition: all 0.5s ease; /* Transition fluide pour les effets de survol */
+  overflow: hidden; /* Cache le contenu qui dépasse */
+}
+
+/* === STYLE DU NOM "NATHAN BERGEON" === */
+.name {
+  font-size: 1.2em; /* Légèrement plus grand que la taille par défaut */
+  transition: opacity 0.3s ease; /* Transition douce de la transparence */
+}
+
+/* === STYLE DES LIENS DU MENU === */
+.nav-links {
+  display: flex; /* Aligne les liens horizontalement */
+  justify-content: center; /* ✅ Centre les liens horizontalement */
+  align-items: center; /* ✅ Centre verticalement les liens */
+  gap: 25px; /* Espace entre les liens */
+  opacity: 0; /* Caché au départ */
+  pointer-events: none; /* Liens non cliquables tant qu’ils sont invisibles */
+  transition: opacity 0.5s ease; /* Transition douce lors de leur apparition */
+}
+
+/* === STYLE DE CHAQUE LIEN === */
+.nav-links a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: white; /* Couleur blanche */
+  font-weight: 500; /* Poids de texte intermédiaire */
+  position: relative; /* Nécessaire pour le soulignement dynamique (::after) */
+  font-size: 1em; /* Taille du texte normale */
+}
+
+/* === LIEN ACTIF (PAGE EN COURS) === */
+.nav-links a.active::after {
+  content: ""; /* Crée un pseudo-élément vide */
+  position: absolute; /* Positionne le soulignement sous le lien */
+  bottom: -4px; /* Place la ligne juste sous le texte */
+  left: 0; /* Commence à gauche du lien */
+  width: 100%; /* Ligne sur toute la largeur du mot */
+  height: 2px; /* Épaisseur du soulignement */
+  background: white; /* Couleur blanche */
+  border-radius: 2px; /* Coins arrondis du soulignement */
+}
+
+/* === EFFET DE SURVOL SUR LA BULLE === */
+.bubble:hover {
+  padding: 30px 80px; /* ✅ Agrandit la bulle au survol */
+  gap: 20px; /* Plus d’espace entre les liens */
+}
+
+/* === DISPARITION DU NOM AU SURVOL === */
+.bubble:hover .name {
+  opacity: 0; /* Rend le nom invisible */
+  pointer-events: none; /* Empêche le clic dessus */
+}
+
+/* === APPARITION DES LIENS AU SURVOL === */
+.bubble:hover .nav-links {
+  opacity: 1; /* Fait apparaître les liens */
+  pointer-events: all; /* Les liens deviennent cliquables */
+}
