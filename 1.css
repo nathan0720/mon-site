@@ -31,6 +31,29 @@ nav {
 
 /* 🏷️ Nom (visible au repos) */
 .logo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 225px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 10px;
+  position: relative;
+  background-color: #00000000;
+  border-radius: 10000px;
+  overflow: hidden;
+  backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
+    hue-rotate(10.0deg);
+  -webkit-backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
+    hue-rotate(10.0deg);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(
+      255,
+      255,
+      255,
+      0.32
+    ), inset 0 -1px 3px rgba(0, 0, 0, 0.2), inset -1px 0 3px rgba(0, 0, 0, 0.16);
+
   font-size: 22px;                       /* Taille du texte */
   font-weight: bold;                     /* Gras */
   letter-spacing: 1px;                   /* Espacement des lettres */
@@ -40,6 +63,30 @@ nav {
 
 /* 📜 Menu (caché par défaut sur ordi) */
 .menu {
+  
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 10px;
+  position: relative;
+  background-color: #00000000;
+  border-radius: 10000px;
+  overflow: hidden;
+  backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
+    hue-rotate(10.0deg);
+  -webkit-backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
+    hue-rotate(10.0deg);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(
+      255,
+      255,
+      255,
+      0.32
+    ), inset 0 -1px 3px rgba(0, 0, 0, 0.2), inset -1px 0 3px rgba(0, 0, 0, 0.16);
+
   list-style: none;                      /* Enlève les puces */
   display: flex;                         /* Aligne les liens horizontalement */
   justify-content: center;
@@ -112,14 +159,11 @@ nav::after {
 }
 
 /* 📱📏 Responsive (pour téléphones et tablettes) */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   nav {
     padding: 15px 0;                     /* Barre plus compacte sur mobile */
   }
 
-  .navbar-content {
-    flex-direction: column;              /* Empile les éléments verticalement */
-  }
 
   .logo {
     font-size: 20px;                     /* Texte légèrement plus petit */
@@ -127,14 +171,10 @@ nav::after {
   }
 
   .menu {
-    position: static;                    /* Ne se superpose plus */
     opacity: 1;                          /* Toujours visible sur mobile */
     pointer-events: auto;                /* Liens actifs */
-    flex-direction: column;              /* Liens empilés verticalement */
     gap: 15px;                           /* Espacement plus serré */
     margin-top: 10px;
-    background: rgba(0, 0, 0, 0.4);      /* Légère transparence pour lisibilité */
-    padding: 10px 0;
     border-radius: 8px;
   }
 

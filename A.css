@@ -1,0 +1,194 @@
+.acceuil {
+  width: 100%;
+  min-width: 1280px;
+  min-height: 832px;
+  display: flex;
+}
+
+.acceuil .frame {
+  width: 1280px;
+  display: flex;
+}
+
+.acceuil .div {
+  width: 1280px;
+  height: 832px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.acceuil .accueil {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+}
+
+.acceuil .image {
+  position: absolute;
+  width: 100%;
+  height: 77.88%;
+  top: 15.14%;
+  left: 0;
+  object-fit: cover;
+}
+
+.acceuil .nathan-bergeon-wrapper {
+  position: absolute;
+  top: 77px;
+  left: 353px;
+  width: 573px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acceuil .nathan-bergeon {
+  display: flex;
+  margin-top: -1px;
+  height: 97px;
+  width: 339px;
+  position: relative;
+  align-items: flex-start;
+}
+
+.acceuil .defaut-liquid-glass {
+  display: flex;
+  flex-wrap: wrap;
+  width: 339px;
+  height: 97px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 10px;
+  position: relative;
+  background-color: #00000000;
+  border-radius: 10000px;
+  overflow: hidden;
+  backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
+    hue-rotate(10.0deg);
+  -webkit-backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
+    hue-rotate(10.0deg);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(
+      255,
+      255,
+      255,
+      0.32
+    ), inset 0 -1px 3px rgba(0, 0, 0, 0.2), inset -1px 0 3px rgba(0, 0, 0, 0.16);
+}
+
+.acceuil .text-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Source Serif Pro-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.acceuil {
+  width: 100%;
+  min-width: 1280px;
+  min-height: 832px;
+  display: flex;
+}
+
+.acceuil .frame {
+  width: 1280px;
+  display: flex;
+}
+
+.acceuil .div {
+  width: 1280px;
+  height: 832px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.acceuil .accueil {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+}
+
+.acceuil .image {
+  position: absolute;
+  width: 100%;
+  height: 77.88%;
+  top: 15.14%;
+  left: 0;
+  object-fit: cover;
+}
+
+.acceuil .nathan-bergeon-wrapper {
+  position: absolute;
+  top: 77px;
+  left: 353px;
+  width: 573px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acceuil .nathan-bergeon {
+  display: flex;
+  margin-top: -1px;
+  height: 97px;
+  width: 339px;
+  position: relative;
+  align-items: flex-start;
+}
+
+.acceuil .defaut-liquid-glass {
+  display: flex;
+  flex-wrap: wrap;
+  width: 339px;
+  height: 97px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 10px;
+  position: relative;
+  background-color: #00000000;
+  border-radius: 10000px;
+  overflow: hidden;
+  backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
+    hue-rotate(10.0deg);
+  -webkit-backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
+    hue-rotate(10.0deg);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(
+      255,
+      255,
+      255,
+      0.32
+    ), inset 0 -1px 3px rgba(0, 0, 0, 0.2), inset -1px 0 3px rgba(0, 0, 0, 0.16);
+}
+
+.acceuil .text-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Serif Pro-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
