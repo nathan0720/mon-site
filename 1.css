@@ -167,7 +167,7 @@ nav::after {
 
   .logo {
     font-size: 20px;                     /* Texte légèrement plus petit */
-    opacity: 1 !important;               /* Toujours visible sur mobile */
+    opacity: 0 !important;               /* Toujours visible sur mobile */
   }
 
   .menu {
