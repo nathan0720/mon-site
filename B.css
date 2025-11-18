@@ -1,0 +1,62 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;                           /* Enlève les marges du navigateur */
+  background: #000000;                    /* Optionnel */
+}
+
+/* Conteneur fixé en haut de la page */
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative; /* Pour les z-index si besoin */
+}
+
+
+/* Bloc commun */
+.bloc1, .bloc2 {
+  background-color: rgb(255, 255, 255);  /* Fond blanc */
+  color: #000000;              /* Texte sombre */
+  padding: 10px 75px;       /* Taille du rectangle */
+  border-radius: 50px;       /* Coins arrondis */
+  font-weight: bold;       /* Texte en gras*/
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Petite ombre */
+  transition: opacity 0.3s ease; /* Pour l'effet de transformation */
+  position: absolute;        /* Superposition des deux blocs */
+  top: 0;
+  left: 0;
+  width: 100%;               /* Occupe tout le conteneur */
+}
+
+/* Bloc 1 visible au départ */
+.bloc1 {
+    display: flex;
+  flex-wrap: wrap;
+  opacity: 1;                /* Active Flexbox */
+  justify-content: center;       /* Centre horizontalement */
+  align-items: center;           /* Centre verticalement */
+}
+
+/* Bloc 2 invisible au départ */
+.bloc2 {
+    display: flex;
+  flex-wrap: wrap;
+  opacity: 0;
+  justify-content: center;       /* Centre horizontalement */
+  align-items: center;           /* Centre verticalement */
+}
+
+/* Au survol du bloc 1 */
+.bloc1:hover {
+  opacity: 0;               /* Disparaît */
+}
+
+.bloc1:hover + .bloc2 {
+  opacity: 1;               /* Bloc2 apparaît */
+}

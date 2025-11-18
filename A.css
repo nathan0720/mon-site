@@ -1,194 +1,78 @@
-.acceuil {
+body {
+  margin: 0;                           /* Enlève les marges du navigateur */
   width: 100%;
-  min-width: 1280px;
-  min-height: 832px;
-  display: flex;
+  height: 100vh;                       /* Hauteur = 100% de la fenêtre */
+  display: flex;                       /* Active Flexbox */
+  justify-content: center;             /* Centre horizontalement */
+  align-items: center;                 /* Centre verticalement */
+  background: #eee;                    /* Optionnel */
 }
 
-.acceuil .frame {
-  width: 1280px;
-  display: flex;
+
+.container {                   /* Conteneur général */
+  position: center;          /* Sert de repère pour les blocs en absolute */
+  width: 300px;                /* Largeur max du conteneur */
+  height: 50px;               /* Hauteur max du conteneur */
+  font-family: Arial, sans-serif;
+
+}
+.bloc1, .bloc2 {
+  position: absolute;          /* On peut les placer avec top/left */
+  top: 50%;                    /* Centre vertical du conteneur */
+  left: 50%;                   /* Centre horizontal du conteneur */
+  transform: translate(-50%, -50%);  /* Corrige pour centrer MALGRÉ la taille */
 }
 
-.acceuil .div {
-  width: 1280px;
-  height: 832px;
-  position: relative;
-  background-color: #ffffff;
-}
+.bloc1 {
+  position: absolute;          /* Placé au même point d’origine que bloc2 */
+  top: 0;                      /* En haut du conteneur */
+  left: 0;                     /* À gauche du conteneur */
+  width: 200px;                /* Taille différente ! */
+  height: 50px;               /* Taille différente ! */
 
-.acceuil .accueil {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000000;
-}
 
-.acceuil .image {
-  position: absolute;
-  width: 100%;
-  height: 77.88%;
-  top: 15.14%;
-  left: 0;
-  object-fit: cover;
-}
-
-.acceuil .nathan-bergeon-wrapper {
-  position: absolute;
-  top: 77px;
-  left: 353px;
-  width: 573px;
-  height: 98px;
-  display: flex;
+  background: #6bb9f0;         /* Couleur du bloc 1 */
+  border-radius: 50px;         /* Coins arrondis */
+  display: flex;               /* Centre le texte */
+  justify-content: center;     
   align-items: center;
-  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  opacity: 1;                  /* Visible au départ */
+  transition: opacity 0.3s;    /* Transition fluide */
 }
 
-.acceuil .nathan-bergeon {
+.bloc2 {
+  position: absolute;          /* Se superpose, mais peut avoir une autre taille */
+  top: 0;                      
+  left: 0;                     
+  width: 260px;                /* Taille différente du bloc 1 ! */
+  height: 160px;               /* Taille différente ! */
+  background: #2ecc71;         /* Couleur du bloc 2 */
+  border-radius: 20px;
+  padding: 20px;
   display: flex;
-  margin-top: -1px;
-  height: 97px;
-  width: 339px;
-  position: relative;
-  align-items: flex-start;
+  flex-direction: column;      /* Place les liens en colonne */
+  gap: 10px;                   /* Espace entre les liens */
+  opacity: 0;                  /* Invisible au départ */
+  transition: opacity 0.3s;    /* Transition fluide */
 }
 
-.acceuil .defaut-liquid-glass {
-  display: flex;
-  flex-wrap: wrap;
-  width: 339px;
-  height: 97px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px 10px;
-  position: relative;
-  background-color: #00000000;
-  border-radius: 10000px;
-  overflow: hidden;
-  backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
-    hue-rotate(10.0deg);
-  -webkit-backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
-    hue-rotate(10.0deg);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(
-      255,
-      255,
-      255,
-      0.32
-    ), inset 0 -1px 3px rgba(0, 0, 0, 0.2), inset -1px 0 3px rgba(0, 0, 0, 0.16);
+.bloc2 a {
+  color: white;                /* Style des liens */
+  text-decoration: none;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.acceuil .text-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  font-family: "Source Serif Pro-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 32px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-.acceuil {
-  width: 100%;
-  min-width: 1280px;
-  min-height: 832px;
-  display: flex;
+.container:hover .bloc1 {
+  opacity: 0;                  /* bloc1 disparaît */
 }
 
-.acceuil .frame {
-  width: 1280px;
-  display: flex;
-}
-
-.acceuil .div {
-  width: 1280px;
-  height: 832px;
-  position: relative;
-  background-color: #ffffff;
-}
-
-.acceuil .accueil {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000000;
-}
-
-.acceuil .image {
-  position: absolute;
-  width: 100%;
-  height: 77.88%;
-  top: 15.14%;
-  left: 0;
-  object-fit: cover;
-}
-
-.acceuil .nathan-bergeon-wrapper {
-  position: absolute;
-  top: 77px;
-  left: 353px;
-  width: 573px;
-  height: 98px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.acceuil .nathan-bergeon {
-  display: flex;
-  margin-top: -1px;
-  height: 97px;
-  width: 339px;
-  position: relative;
-  align-items: flex-start;
-}
-
-.acceuil .defaut-liquid-glass {
-  display: flex;
-  flex-wrap: wrap;
-  width: 339px;
-  height: 97px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px 10px;
-  position: relative;
-  background-color: #00000000;
-  border-radius: 10000px;
-  overflow: hidden;
-  backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
-    hue-rotate(10.0deg);
-  -webkit-backdrop-filter: blur(5.0px) brightness(108.0%) saturate(105.0%)
-    hue-rotate(10.0deg);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(
-      255,
-      255,
-      255,
-      0.32
-    ), inset 0 -1px 3px rgba(0, 0, 0, 0.2), inset -1px 0 3px rgba(0, 0, 0, 0.16);
-}
-
-.acceuil .text-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin: 0;
-  padding: 0;
-  font-family: "Source Serif Pro-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 32px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
+.container:hover .bloc2 {
+  opacity: 1;                  /* bloc2 apparaît */
 }
