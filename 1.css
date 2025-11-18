@@ -1,244 +1,124 @@
-/* === CSS REORGANISÉ ET COMMENTÉ LIGNE PAR LIGNE === */
-
-/* 🌑 ====== STYLE GÉNÉRAL ====== */
-body {
-  background-color: black; /* Fond noir général */
-  color: white; /* Couleur du texte */
-  font-family: Arial, Helvetica, sans-serif; /* Police principale */
-  margin: 0; /* Supprime marges du navigateur */
-  padding: 0; /* Supprime padding global */
+/* ===================== RESET ===================== */
+body{
+  margin:0;
+  background:black;
+  color:white;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-
-/* 🧭 ====== BARRE DE NAVIGATION ====== */
-nav {
-  position: fixed; /* Fixée en haut même en scrollant */
-  top: 0; /* Positionne au sommet */
-  left: 0; /* Collée à gauche */
-  width: 100%; /* Occupe toute la largeur */
-  background: transparent; /* Pas de fond opaque */
-  z-index: 1000; /* Toujours au-dessus des autres éléments */
-  padding: 20px 0; /* Hauteur / espace vertical */
-  cursor: pointer; /* Indique une zone interactive */
+/* ===================== NAV DESKTOP ===================== */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:20px 0;
+  background:transparent;
+  z-index:1000;
+}
+.navbar-content{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  transition:0.4s ease;
 }
 
-/* Conteneur interne de la barre */
-.navbar-content {
-  display: flex; /* Active un layout horizontal */
-  justify-content: center; /* Centre les éléments */
-  align-items: center; /* Centre verticalement */
-  position: relative; /* Nécessaire pour les positions absolues internes */
-  transition: all 0.4s ease; /* Animation fluide */
+/* Logo desktop */
+.logo{
+  display:flex;
+  width:225px;
+  height:60px;
+  justify-content:center;
+  align-items:center;
+  border-radius:10000px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(6px) brightness(110%) saturate(120%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.4), inset 1px 0 0 rgba(255,255,255,0.3), inset 0 -1px 3px rgba(0,0,0,0.3);
+  font-size:22px;
+  font-weight:bold;
+  letter-spacing:1px;
+  transition:0.4s;
 }
 
-
-/* 🏷️ ====== LOGO / NOM ====== */
-.logo {
-  display: flex; /* Active la flexbox */
-  flex-wrap: wrap; /* Permet retour à la ligne */
-  width: 225px; /* Largeur du logo */
-  height: 60px; /* Hauteur du logo */
-  align-items: center; /* Centre verticalement */
-  justify-content: center; /* Centre horizontalement */
-  gap: 10px; /* Espace interne entre éléments */
-  position: relative; /* Pour positionner d'autres éléments si besoin */
-  background-color: transparent; /* Fond transparent */
-  border-radius: 10000px; /* Forme très arrondie */
-  overflow: hidden; /* Coupe ce qui dépasse */
-  backdrop-filter: blur(5px) brightness(108%) saturate(105%) hue-rotate(10deg); /* Effet verre */
-  -webkit-backdrop-filter: blur(5px) brightness(108%) saturate(105%) hue-rotate(10deg); /* Version Safari */
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(255, 255, 255, 0.32), inset 0 -1px 3px rgba(0, 0, 0, 0.2), inset -1px 0 3px rgba(0, 0, 0, 0.16); /* Ombres internes */
-  font-size: 22px; /* Taille du texte */
-  font-weight: bold; /* Gras */
-  letter-spacing: 1px; /* Espacement des lettres */
-  opacity: 1; /* Visible par défaut */
-  transition: opacity 0.4s ease; /* Fade */
+/* Menu desktop */
+ul.menu{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:60px;
+  gap:40px;
+  border-radius:10000px;
+  padding:0;
+  margin:0;
+  list-style:none;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(6px) brightness(110%) saturate(120%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.4), inset 1px 0 0 rgba(255,255,255,0.3), inset 0 -1px 3px rgba(0,0,0,0.3);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.4s;
 }
-
-
-/* 📜 ====== MENU ====== */
-.menu {
-  display: flex; /* Alignement horizontal */
-  flex-wrap: wrap; /* Permet de s'adapter */
-  width: 500px; /* Largeur du menu */
-  height: 60px; /* Hauteur du bloc menu */
-  align-items: center; /* Centre verticalement */
-  justify-content: center; /* Centre horizontalement */
-  gap: 40px; /* Espace entre liens */
-  position: absolute; /* Superpose sur l'emplacement du logo */
-  top: 0; /* Alignement vertical */
-  left: 50%; /* Centre horizontalement */
-  transform: translateX(-50%); /* Corrige le centrage */
-  background-color: transparent; /* Fond transparent */
-  border-radius: 10000px; /* Forme arrondie */
-  overflow: hidden; /* Coupe ce qui dépasse */
-  backdrop-filter: blur(5px) brightness(108%) saturate(105%) hue-rotate(10deg); /* Effet verre */
-  -webkit-backdrop-filter: blur(5px) brightness(108%) saturate(105%) hue-rotate(10deg); /* Version Safari */
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(255, 255, 255, 0.32), inset 0 -1px 3px rgba(0, 0, 0, 0.2), inset -1px 0 3px rgba(0, 0, 0, 0.16); /* Effets d'ombres */
-  list-style: none; /* Pas de puces */
-  margin: 0; /* Supprime marges */
-  padding: 0; /* Supprime padding */
-  opacity: 0; /* Caché par défaut */
-  pointer-events: none; /* Désactivé tant que caché */
-  transition: opacity 0.4s ease; /* Transition d'apparition */
+ul.menu a{
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  position:relative;
+  transition:0.3s;
 }
-
-/* 🔗 Liens du menu */
-.menu a {
-  text-decoration: none; /* Pas de soulignement */
-  color: white; /* Couleur du texte */
-  font-size: 18px; /* Taille des liens */
-  position: relative; /* Nécessaire pour l'effet underline */
-  transition: color 0.3s; /* Animation de couleur */
+ul.menu a::after{
+  content:"";
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  width:0;
+  height:2px;
+  background:white;
+  transition:0.3s;
 }
-
-/* ✨ Animation de soulignement */
-.menu a::after {
-  content: ""; /* Génère le trait */
-  position: absolute; /* Positionné sous le texte */
-  bottom: -4px; /* Sous le lien */
-  left: 0; /* Début du trait */
-  width: 0; /* Invisible par défaut */
-  height: 2px; /* Épaisseur */
-  background-color: white; /* Couleur du trait */
-  transition: width 0.3s; /* Animation */
+ul.menu a:hover::after{
+  width:50%;
 }
-
-.menu a:hover::after {
-  width: 50%; /* S'allonge au survol */
+ul.menu a.active::after{
+  width:100%;
 }
+nav:hover .logo{ opacity:0; }
+nav:hover .menu{ opacity:1; pointer-events:auto; }
 
-.menu a.active::after {
-  width: 100%; /* Lien actif entièrement souligné */
-}
-
-
-/* 🧠 ====== EFFETS AU SURVOL DE NAV ====== */
-nav:hover .logo {
-  opacity: 0; /* Cache le logo */
-}
-
-nav:hover .menu {
-  opacity: 1; /* Affiche le menu */
-  pointer-events: auto; /* Active les liens */
-}
-
-
-/* 🧱 ====== CONTENU PRINCIPAL ====== */
-main {
-  text-align: center; /* Texte centré */
-  margin-top: 120px; /* Laisse la place pour la barre fixe */
-}
-
-
-/* 🖼️ ====== IMAGES ====== */
-img {
-  width: 100%; /* S'adapte à la largeur */
-  height: auto; /* Respecte proportions */
-}
-
-/* Image de profil */
-.image-pp {
-  width: 200px; /* Largeur fixe */
-  height: 200px; /* Hauteur fixe */
-  object-fit: cover; /* Coupe proprement */
-  border-radius: 50%; /* Forme ronde */
-  float: right; /* Aligne à droite */
-  margin-right: 10%; /* Espace côté droit */
-  margin-left: 20%; /* Espace avec le texte */
-}
-
-
-/* 📱 ====== RESPONSIVE MOBILE ====== */
-@media (max-width: 480px) {
-  /* Barre mobile fixée en bas */
-  nav {
-    position: fixed; /* Fixée */
-    bottom: 0; /* Collée en bas */
-    top: auto; /* Désactive top */
-    left: 0;
-    width: 100%; /* Pleine largeur */
-    padding: 10px 0; /* Plus compact */
-    background: transparent; /* Effet verre gardé */
-    backdrop-filter: blur(5px) brightness(108%) saturate(105%) hue-rotate(10deg);
-    -webkit-backdrop-filter: blur(5px) brightness(108%) saturate(105%) hue-rotate(10deg);
+/* ===================== MOBILE NAV BOTTOM ===================== */
+@media(max-width:768px){
+  nav{
+    top:auto;
+    bottom:0;
+    padding:0;
   }
-
-  /* Logo totalement supprimé sur mobile */
-  .logo {
-    display: none !important; /* Retire "Nathan Bergeron" */
+  .logo{ display:none; }
+  ul.menu{
+    position:fixed;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    height:65px;
+    gap:35px;
+    border-radius:0;
+    opacity:1;
+    pointer-events:auto;
+    justify-content:space-around;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px) saturate(160%) brightness(110%);
+    box-shadow:0 -8px 25px rgba(0,0,0,0.4);
   }
-
-  /* Menu toujours visible, centré et adapté bas d'écran */
-  .menu {
-    opacity: 1 !important; /* Toujours visible */
-    pointer-events: auto; /* Cliquable */
-    position: static; /* Ne flotte plus au centre du haut */
-    display: flex;
-    justify-content: space-around; /* Répartition égale des liens */
-    width: 100%; /* Largeur totale */
-    height: auto; /* Ajuste hauteur */
-    gap: 0; /* Pas d'espacement inutile */
-    padding: 0;
-    border-radius: 0; /* Car collé en bas */
-    font-size: 14px; /* Texte réduit */
-  }
-
-  /* Liens cliquables, responsive */
-  .menu a {
-    flex: 1; /* Chaque lien prend la même place */
-    text-align: center; /* Centre le texte */
-    font-size: 14px; /* Taille ajustée */
-    padding: 10px 0; /* Zone tactile plus grande */
-  }
-
-  /* Désactivation hover inutile sur mobile */
-  nav:hover .menu {
-    opacity: 1;
-  }
-  nav:hover .logo {
-    opacity: 1;
+  ul.menu li a{
+    font-size:16px;
   }
 }
 
-/* 📅 ====== TIMELINE ====== */ ====== TIMELINE ====== */
-.timeline-container {
-  display: flex; /* Alignement horizontal */
-  align-items: center; /* Centre verticalement */
-  width: 80%; /* Largeur du conteneur */
-  margin: 50px auto; /* Centre avec marges */
-  position: relative; /* Position contextuelle */
-}
-
-.timeline {
-  display: flex; /* Contenu horizontal */
-  overflow-x: auto; /* Scroll horizontal */
-  scroll-behavior: smooth; /* Défilement fluide */
-  gap: 20px; /* Espace entre items */
-  padding: 20px; /* Padding interne */
-}
-
-.timeline::-webkit-scrollbar {
-  display: none; /* Masque la scrollbar */
-}
-
-.timeline-item {
-  min-width: 200px; /* Largeur mini */
-  padding: 20px; /* Espace interne */
-  background-color: #f0f0f0; /* Fond clair */
-  border: 2px solid #ccc; /* Bordure */
-  border-radius: 10px; /* Coins arrondis */
-  text-align: center; /* Texte centré */
-  flex-shrink: 0; /* Empêche rétrécissement */
-}
-
-.arrow {
-  background-color: #007BFF; /* Fond bleu */
-  color: white; /* Texte blanc */
-  border: none; /* Pas de bordure */
-  padding: 10px 15px; /* Taille du bouton */
-  cursor: pointer; /* Curseur interactif */
-  font-size: 20px; /* Taille du symbole */
-  border-radius: 5px; /* Coins arrondis */
-  user-select: none; /* Empêche sélection du texte */
+main{
+  margin-top:120px;
+  text-align:center;
 }
